@@ -1,0 +1,31 @@
+.heading {
+    text-align: center;
+}
+
+.btn-group.main{
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+
+}
+
+.heading {
+    text-align: center;
+}
+
+.btn-group.main{
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+
+}
+
+.btn.btn-success.col-12.mx-auto{
+    margin: 5px;
+}
+.btn.btn-warning.col-12.mx-auto{
+    margin: 5px;
+}
+.btn.btn-danger.col-12.mx-auto{
+    margin: 5px;
+}

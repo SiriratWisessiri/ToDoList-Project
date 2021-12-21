@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="col d-flex justify-content-center">
+        <div class="card taskCard" style="width: 18rem;">
+            <img src="./img/task2.jpg" class="card-img-top" alt="Task1 image">
+                <div class="card-body">
+                    <h5 class="card-title">Create mock wireframe app</h5>
+                    <p class="card-text">Description of the task:</p>
+                </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Assignee
+                            <label for="Assignee" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-control" >
+                        </li>
+                    
+                        <li class="list-group-item">
+                            <div id="date-picker" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+                                <label for="dueDate">Due Date</label>
+                                <input type="date" id="dueDate" class="form-control" name="dueDate">
+                            
+                        </li>
+                        <li class="list-group-item">Status
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">To do</option>
+                                <option value="2">In Progress</option>
+                                <option value="3">Review</option>
+                                <option value="3">Done</option>
+                            </select>
+                            </li> 
+                        </ul>
+                 
+        
+<!--AddNewTask-->    
+<!-- Button trigger modal -->
+
+ 
+            <div class="btn-group">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#AddNewTask">
+                    Add New Task
+                </button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#EditTask">
+                    Edit
+                </button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#Delete">
+                    Delete
+                </button>
+            </div><br>  
+            <div class="footer">
+                <a href="/index.html"><button class="btn btn-warning col-12 mx-auto" type="button">Back to first page</button><a>
+            </div>
+        </div> 
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="AddNewTask" tabindex="-1" role="dialog" aria-labelledby="AddTaskModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="AddTaskModalCenterTitle">Add Task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Name</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+            </div>
+            
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Assigned To </label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+            </div>
+            
+            <div class="mb-3">
+              <div id="date-picker" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+                <label for="dueDate">Due Date</label>
+                <input type="date" id="dueDate" class="form-control" name="dueDate">
+            </div>
+              <!-- <label for="exampleFormControlInput1" class="form-label">Due Date </label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Add the due date"> -->
+            </div>
+
+          </div>
+    
+          <!--Status-->
+          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Status
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">To Do</a>
+                <a class="dropdown-item" href="#">In Progress</a>
+                <a class="dropdown-item" href="#">Review</a>
+                <a class="dropdown-item" href="#">Done</a>
+              </div>
+            </div>
+            <button type="button" class="btn btn-success">Submit</button>
+            <button type="button" class="btn btn-warning">Reset</button>
+          </div>
+          <!--End ofStatus-->
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--AddNewTask-->    
+
+  <!--Edit button-->
+ 
+    <!-- Modal -->
+    <div class="modal fade" id="EditTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Edit Task</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Name</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+            </div>
+            
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Assigned To </label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+            </div>
+            
+            <div class="mb-3">
+              <div id="date-picker" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+                <label for="dueDate">Due Date</label>
+                <input type="date" id="dueDate" class="form-control" name="dueDate">
+              </div>
+            </div>
+          </div>
+
+          <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <div class="btn-group" role="group">
+              <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Status
+              </button>
+              <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                <a class="dropdown-item" href="#">To Do</a>
+                <a class="dropdown-item" href="#">In Progress</a>
+                <a class="dropdown-item" href="#">Review</a>
+                <a class="dropdown-item" href="#">Done</a>
+              </div>
+            </div>
+            <button type="button" class="btn btn-success">Submit</button>
+            <button type="button" class="btn btn-warning">Reset</button>
+          </div>
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!--End Edit button-->
+
+  <!--delete button-->
+
+  <!-- Modal -->
+  <div class="modal fade" id="Delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Delete</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body bg-danger">
+          <h4>Are you sure you want to delete this?</h4>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="yes">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Yes
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="no" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              No
+            </label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End delete button-->
+
+
+</div><!--End of justify Item Center-->
+
+
+ 
+
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
