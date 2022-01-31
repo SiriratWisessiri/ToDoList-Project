@@ -40,3 +40,31 @@
 .card img{
     max-block-size: 15rem;
 }
+
+.card-title {
+    display:inline-block;
+}
+
+.cardBtn {
+    float: right;
+    
+}
+
+.card-body {
+    padding: 3px;
+    margin: 3px;
+    
+}
+
+.newCard {
+    border: none;
+}
+
+.listCard{
+    margin-bottom: 5px;
+    
+    
+}
+
+
+

@@ -42,7 +42,19 @@ let submit = document.getElementById('submit');
   //This to test task 7 step 2
 //   let taskHtml = createTaskHtml ("cat", "cat eat dog", "cat evil", "tomorrow", "to do");
 //   console.log(taskHtml);
- 
+
+//Task 8 Update a task, add event listener to task-list
+/*  const taskButton = document.querySelector("#task-list");
+ taskButton.addEventListener('click', (event) => {
+     if(event.target.classList.contains("done-button")){
+        console.log(event.target.parentElement);
+         const parentTask = event.target.li.parentElement;
+         console.log(parentTask);
+
+ });
+ */
+
+
 // Try delete button function that doesn't work
 /* let taskListParent = document.getElementById('task-list');
 let taskListchild = taskListParent.getElementsByClassName('card-body');
@@ -67,3 +79,34 @@ deleteBtn.addEventListener("click",deleteButton()); */
 // deleteButton.addEventListener('click', () => {
 //     taskListchild.removeChild();
 // }) 
+
+//Test collaps
+// var coll = document.getElementsByClassName("collapsible");
+// var i;
+
+// for (i = 0; i < coll.length; i++) {
+//   coll[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var content = this.nextElementSibling;
+//     if (content.style.display === "block") {
+//       content.style.display = "none";
+//     } else {
+//       content.style.display = "block";
+//     }
+//   });
+// }
+
+// var coll = document.getElementsByClassName("collapsible");
+// var i;
+
+// for (i = 0; i < coll.length; i++) {
+//   coll[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var content = this.nextElementSibling;
+//     if (content.style.maxHeight){
+//       content.style.maxHeight = null;
+//     } else {
+//       content.style.maxHeight = content.scrollHeight + "px";
+//     }
+//   });
+// }
