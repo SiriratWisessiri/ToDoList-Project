@@ -1,6 +1,9 @@
 //Initialise the TaskManager class from taskManager.js
 const taskManager = new TaskManager()
 
+// Task9: In js/index.js, near the top of the file, after instantiating taskManager, load the tasks with taskManager.load() and render them with taskManager.render().
+taskManager.load();
+taskManager.render();
 
 // display date
 const date = new Date();
@@ -26,6 +29,7 @@ function submitForm() {
         alert("Invalid Input!(all field needs to be more than 5 characters)");
     } else {
         taskManager.addTask(newTaskNameInput.value, description.value, assigned.value, dueDate.value, astatus.value);
+        taskManager.save()
         taskManager.render();
         console.log(taskManager);
         alert('Well done you legend');
@@ -38,6 +42,22 @@ let submit = document.getElementById('submit');
     event.preventDefault();
     submitForm();
   });
+
+  //Task 8 Update a task, add event listener to task-list
+ const taskList = document.querySelector("#task-list");
+ taskList.addEventListener('click', (event) => {
+     if(event.target.classList.contains("done-button")){
+        const parentTask = event.target.parentElement.parentElement.parentElement;
+        console.log(parentTask);
+        const taskId = parentTask.dataset.taskId;
+        console.log(taskId);
+        const task = taskManager.getTaskById(taskId);
+        console.log(task);
+        task.status = "Done";
+        taskManager.save()
+        taskManager.render();
+        }
+    });
  
   //This to test task 7 step 2
 //   let taskHtml = createTaskHtml ("cat", "cat eat dog", "cat evil", "tomorrow", "to do");
