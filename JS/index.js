@@ -65,6 +65,7 @@ if(event.target.classList.contains("done-button")){
     task.status = "Done";
     taskManager.save();
     taskManager.render();
+    
     }
 //Task 10 Dlete button
 // 1.In js/index.js, find the EventListener for the click event on the Tasks List we created in Task 8.
@@ -83,8 +84,23 @@ if(event.target.classList.contains("done-button")){
     }
     });
  
+/*     // Select the Tasks List
+const tasksList = document.querySelector('#task-list');
+// Add an 'onclick' event listener to the Tasks List
+tasksList.addEventListener('click', (event) => {
+    // Check if a "Mark As Done" button was clicked
+    if (event.target.classList.contains('done-button')) {
+        // Get the parent Task
+        const parentTask = event.target.parentElement.parentElement.parentElement;
+        // Get the taskId of the parent Task.
+        const taskId = Number(parentTask.dataset.taskId);
+        // Get the task from the TaskManager using the taskId
+        const task = taskManager.getTaskById(taskId);
+        // Update the task status to 'DONE'
+        task.status = 'Done';
+    } */
+  
     
-
 
 // Try delete button function that doesn't work
 /* let taskListParent = document.getElementById('task-list');

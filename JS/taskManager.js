@@ -8,9 +8,8 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
       <button class="btn btn-outline-primary btn-sm " type="button" data-toggle="collapse" data-target="#${id}" aria-expanded="false" aria-controls="${id}">
         Details
       </button>
-      
       <button type="button" class="delete-button btn btn-outline-danger btn-sm">delete</button>
-      <button type="button" class="done-button btn btn-outline-success btn-sm">Done</button>
+      <button type="button" class="done-button ${status === 'To Do' || status === 'In Progress' || status ==='Review' ? 'visible' : 'invisible'}">Done</button>
     </div>
     <div class="collapse" id="${id}">
     <p class="card-text">${description}</p>
@@ -130,7 +129,10 @@ class TaskManager {
       }
     }
     this.tasks = newTasks;
+    console.log(newTasks);
   }
+
+
 
 }
 // separate the task from the "addTask" method to create another class, advised by Albert
