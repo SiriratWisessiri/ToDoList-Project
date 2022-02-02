@@ -66,5 +66,14 @@
     
 }
 
+.list-group-item{
+    border-color: blue;
+    border-radius: 20%;
+}
+
+.status {
+    margin-bottom: 20px;
+}
+
 
 
