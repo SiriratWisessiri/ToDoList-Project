@@ -9,7 +9,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => {
         Details
       </button>
       <button type="button" class="delete-button btn btn-outline-danger btn-sm">delete</button>
-      <button type="button" class="done-button ${status === 'To Do' || status === 'In Progress' || status ==='Review' ? 'visible' : 'invisible'}">Done</button>
+      <button type="button" class="done-button ${hide(status)}">Done</button>
     </div>
     <div class="collapse" id="${id}">
     <p class="card-text">${description}</p>
@@ -129,7 +129,7 @@ class TaskManager {
       }
     }
     this.tasks = newTasks;
-    console.log(newTasks);
+  
   }
 
 
@@ -147,6 +147,14 @@ class Task {
       this.dueDate = dueDate
       this.status = status
       Task.count++
+  }
+}
+//hide the 'Done' button once clicked
+function hide(status){
+  if(status === 'To Do' || status === 'In Progress' || status === 'Review'){
+    return 'visible'
+  }else{
+    return 'invisible'
   }
 }
 

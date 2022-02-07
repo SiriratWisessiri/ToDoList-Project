@@ -41,7 +41,7 @@ function submitForm() {
         taskManager.save()
         taskManager.render();
         console.log(taskManager);
-        alert('Well done you legend');
+        alert('Your form is submitted. Well done you legend');
         document.querySelector("form").reset();
     }
 }
